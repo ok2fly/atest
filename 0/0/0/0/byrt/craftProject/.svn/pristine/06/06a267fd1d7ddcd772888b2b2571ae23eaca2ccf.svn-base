@@ -1,0 +1,44 @@
+/* CSS Document */
+/*
+	设备管理 场站管理 风机管理
+*/
+.poptable td, .poptable th {
+	height: 40px;
+	line-height: 40px;
+	padding: 10px 0;
+	font-weight: normal;
+}
+.poptable th {
+	text-align: right;
+	padding-right: 10px;
+}
+.poptable td {
+	width: 35%;
+}
+.popinput {
+	height: 38px;
+	line-height: 38px;
+	border: solid 1px #d6d6d6;
+	background: #fff;
+	padding-left: 10px;
+	width: 150px;
+	color: #333;	
+}
+.popbut {
+	height: 40px;
+	border: none;
+	line-height: 40px;
+	background: #ed1c24;
+	width: 140px;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	color: #fff;
+}
+.w162 {
+	width: 162px;
+}
+
+.w440{
+	width:440px;
+}

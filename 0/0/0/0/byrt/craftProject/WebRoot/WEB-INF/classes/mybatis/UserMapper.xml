@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.craft.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.craft.pojo.User">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="use_mal" property="useMal" jdbcType="VARCHAR"/>
+        <result column="use_pas" property="usePas" jdbcType="VARCHAR"/>
+        <result column="use_nam" property="useNam" jdbcType="VARCHAR"/>
+        <result column="use_sex" property="useSex" jdbcType="INTEGER"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="use_mob" property="useMob" jdbcType="VARCHAR"/>
+        <result column="use_idc" property="useIdc" jdbcType="VARCHAR"/>
+        <result column="third_acc" property="thirdAcc" jdbcType="VARCHAR"/>
+        <result column="use_unit" property="useUnit" jdbcType="VARCHAR"/>
+        <result column="use_profile" property="useProfile" jdbcType="VARCHAR"/>
+        <result column="use_add" property="useAdd" jdbcType="VARCHAR"/>
+        <result column="use_sta" property="useSta" jdbcType="INTEGER"/>
+        <result column="use_typ" property="useTyp" jdbcType="INTEGER"/>
+        <result column="rol_id" property="rolId" jdbcType="INTEGER"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, use_mal, use_pas, use_nam, use_sex, age, use_mob, use_idc, third_acc, use_unit,
+        use_profile, use_add, use_sta, use_typ, rol_id, remark, create_time, update_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM user
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.craft.pojo.User">
+        INSERT INTO user (id, use_mal, use_pas,
+                          use_nam, use_sex, age,
+                          use_mob, use_idc, third_acc,
+                          use_unit, use_profile, use_add,
+                          use_sta, use_typ, rol_id,
+                          remark, create_time, update_time
+        )
+        VALUES (#{id,jdbcType=INTEGER}, #{useMal,jdbcType=VARCHAR}, #{usePas,jdbcType=VARCHAR},
+                                        #{useNam,jdbcType=VARCHAR}, #{useSex,jdbcType=INTEGER}, #{age,jdbcType=INTEGER},
+                                        #{useMob,jdbcType=VARCHAR}, #{useIdc,jdbcType=VARCHAR},
+                                        #{thirdAcc,jdbcType=VARCHAR},
+                                        #{useUnit,jdbcType=VARCHAR}, #{useProfile,jdbcType=VARCHAR},
+                #{useAdd,jdbcType=VARCHAR},
+                #{useSta,jdbcType=INTEGER}, #{useTyp,jdbcType=INTEGER}, #{rolId,jdbcType=INTEGER},
+                #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.craft.pojo.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="useMal != null">
+                use_mal,
+            </if>
+            <if test="usePas != null">
+                use_pas,
+            </if>
+            <if test="useNam != null">
+                use_nam,
+            </if>
+            <if test="useSex != null">
+                use_sex,
+            </if>
+            <if test="age != null">
+                age,
+            </if>
+            <if test="useMob != null">
+                use_mob,
+            </if>
+            <if test="useIdc != null">
+                use_idc,
+            </if>
+            <if test="thirdAcc != null">
+                third_acc,
+            </if>
+            <if test="useUnit != null">
+                use_unit,
+            </if>
+            <if test="useProfile != null">
+                use_profile,
+            </if>
+            <if test="useAdd != null">
+                use_add,
+            </if>
+            <if test="useSta != null">
+                use_sta,
+            </if>
+            <if test="useTyp != null">
+                use_typ,
+            </if>
+            <if test="rolId != null">
+                rol_id,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="useMal != null">
+                #{useMal,jdbcType=VARCHAR},
+            </if>
+            <if test="usePas != null">
+                #{usePas,jdbcType=VARCHAR},
+            </if>
+            <if test="useNam != null">
+                #{useNam,jdbcType=VARCHAR},
+            </if>
+            <if test="useSex != null">
+                #{useSex,jdbcType=INTEGER},
+            </if>
+            <if test="age != null">
+                #{age,jdbcType=INTEGER},
+            </if>
+            <if test="useMob != null">
+                #{useMob,jdbcType=VARCHAR},
+            </if>
+            <if test="useIdc != null">
+                #{useIdc,jdbcType=VARCHAR},
+            </if>
+            <if test="thirdAcc != null">
+                #{thirdAcc,jdbcType=VARCHAR},
+            </if>
+            <if test="useUnit != null">
+                #{useUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="useProfile != null">
+                #{useProfile,jdbcType=VARCHAR},
+            </if>
+            <if test="useAdd != null">
+                #{useAdd,jdbcType=VARCHAR},
+            </if>
+            <if test="useSta != null">
+                #{useSta,jdbcType=INTEGER},
+            </if>
+            <if test="useTyp != null">
+                #{useTyp,jdbcType=INTEGER},
+            </if>
+            <if test="rolId != null">
+                #{rolId,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.craft.pojo.User">
+        update user
+        <set>
+            <if test="useMal != null">
+                use_mal = #{useMal,jdbcType=VARCHAR},
+            </if>
+            <if test="usePas != null">
+                use_pas = #{usePas,jdbcType=VARCHAR},
+            </if>
+            <if test="useNam != null">
+                use_nam = #{useNam,jdbcType=VARCHAR},
+            </if>
+            <if test="useSex != null">
+                use_sex = #{useSex,jdbcType=INTEGER},
+            </if>
+            <if test="age != null">
+                age = #{age,jdbcType=INTEGER},
+            </if>
+            <if test="useMob != null">
+                use_mob = #{useMob,jdbcType=VARCHAR},
+            </if>
+            <if test="useIdc != null">
+                use_idc = #{useIdc,jdbcType=VARCHAR},
+            </if>
+            <if test="thirdAcc != null">
+                third_acc = #{thirdAcc,jdbcType=VARCHAR},
+            </if>
+            <if test="useUnit != null">
+                use_unit = #{useUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="useProfile != null">
+                use_profile = #{useProfile,jdbcType=VARCHAR},
+            </if>
+            <if test="useAdd != null">
+                use_add = #{useAdd,jdbcType=VARCHAR},
+            </if>
+            <if test="useSta != null">
+                use_sta = #{useSta,jdbcType=INTEGER},
+            </if>
+            <if test="useTyp != null">
+                use_typ = #{useTyp,jdbcType=INTEGER},
+            </if>
+            <if test="rolId != null">
+                rol_id = #{rolId,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.craft.pojo.User">
+        UPDATE user
+        SET use_mal     = #{useMal,jdbcType=VARCHAR},
+            use_pas     = #{usePas,jdbcType=VARCHAR},
+            use_nam     = #{useNam,jdbcType=VARCHAR},
+            use_sex     = #{useSex,jdbcType=INTEGER},
+            age         = #{age,jdbcType=INTEGER},
+            use_mob     = #{useMob,jdbcType=VARCHAR},
+            use_idc     = #{useIdc,jdbcType=VARCHAR},
+            third_acc   = #{thirdAcc,jdbcType=VARCHAR},
+            use_unit    = #{useUnit,jdbcType=VARCHAR},
+            use_profile = #{useProfile,jdbcType=VARCHAR},
+            use_add     = #{useAdd,jdbcType=VARCHAR},
+            use_sta     = #{useSta,jdbcType=INTEGER},
+            use_typ     = #{useTyp,jdbcType=INTEGER},
+            rol_id      = #{rolId,jdbcType=INTEGER},
+            remark      = #{remark,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="checkUserExist" resultType="int" parameterType="string">
+        SELECT count(1)
+        FROM user
+        WHERE use_mal = #{username} OR use_mob = #{username}
+    </select>
+
+
+    <select id="selectLogin" resultType="User" parameterType="map">
+        SELECT
+            id,
+            use_mal,
+            use_mob,
+            use_nam,
+            use_typ,
+            rol_id
+        FROM user
+        WHERE use_mal = #{username} OR use_mob = #{username}
+                                       AND use_pas = #{password}
+    </select>
+
+    <select id="checkPhoneByUserId" resultType="int" parameterType="map">
+
+    </select>
+
+    <select id="checkPhone" resultType="int" parameterType="string">
+        SELECT count(1)
+        FROM user
+        WHERE use_mob = #{use_mob}
+    </select>
+
+    <select id="checkEmail" resultType="int" parameterType="string">
+        SELECT count(1)
+        FROM user
+        WHERE use_mal = #{email}
+    </select>
+
+    <update id="updateStateByEmail" parameterType="Map">
+        UPDATE user
+        SET use_sta = #{state}
+        WHERE use_mal = #{email}
+    </update>
+
+
+
+	<!-- 用户信息查询，以登录名为条件(PC) -->
+	<select id="getUserByLoginNamePC" parameterType="java.util.LinkedHashMap" resultType="java.util.LinkedHashMap">
+		SELECT
+			u.id,
+			u.acc_num,
+			u.use_mal,
+			u.use_nam,
+			u.use_sex,
+			u.use_mob,
+			u.use_idc,
+			u.use_add,
+			u.use_maj,
+			u.pla_ori,
+			u.remark,
+			u.use_pas
+		FROM
+			use_use u
+		WHERE
+			1 = 1
+
+		<if test="login_name != null and login_name != ''">
+
+			AND u.acc_num = #{login_name} 
+			
+		</if>
+		
+	</select>
+
+
+	<!-- 用户信息查询，展示1级菜单 -->
+	<select id="getUserRoleByModule1Levl" parameterType="java.util.LinkedHashMap"
+		resultType="java.util.LinkedHashMap">
+		SELECT
+			bm.id,
+			bm.module_name,
+			bm.module_code,
+			bm.module_father,
+			bm.module_level,
+			bm.module_url,
+			bm.is_button,
+			bm.description
+		FROM
+			sys_bas_men bm,
+			sys_bas_men_rol bmr
+		WHERE
+			bm.id = bmr.module_id
+		AND bmr.rol_id = #{rol_id} 
+		AND bm.module_level = 1
+		ORDER BY
+			bm.module_sort
+	</select>
+
+
+	<!-- 用户信息查询，展示二级或三级菜单 -->
+	<select id="getUserRoleByModule2Levl" resultType="java.util.LinkedHashMap">
+	
+		SELECT
+			bm.id,
+			bm.module_name,
+			bm.module_code,
+			bm.module_father,
+			bm.module_level,
+			bm.module_url,
+			bm.is_button,
+			bm.description
+		FROM
+			sys_bas_men bm,
+			sys_bas_men_rol bmr
+		WHERE
+			bm.id = bmr.module_id
+		AND bmr.rol_id = #{rol_id} and
+		bm.module_father = #{pos_id} 
+		ORDER BY
+			bm.module_sort
+
+	</select>
+
+
+
+    <select id="selectAllUser" resultType="user" >
+        SELECT * FROM user
+    </select>
+
+
+
+</mapper>

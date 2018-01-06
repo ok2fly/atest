@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>导入风机</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/pop.css">
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/messages_zh.js"></script>
+<script src="../js/leftnav.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/wbox.js"></script>
+</head>
+<body>
+	<div class="pt18">
+		<table  cellpadding="0" cellspacing="0" border="0" width="100%" class="poptable">
+			<tr>
+				<th>编号</th>
+				<td>
+					 <input id="fan_code"  type="text" value="" placeholder="请输入编号" class="popinput quinputcol" required>
+				 </td>
+				<th>风机号</th>
+				<td><input id="fan_num"  type="text" value="" placeholder="请输入风机号" class="popinput quinputcol" required></td>
+			</tr>
+			<tr>
+				<th>风机型号</th>
+				<td><input  id="fan_model" type="text" value="" placeholder="请输入风机型号" class="popinput quinputcol" required></td>
+				<th>叶片型号</th>
+				<td><input id="blade_model"  type="text" value="" placeholder="请输入叶片型号" class="popinput quinputcol" required></td>
+			</tr>
+			<tr>
+				<th>经度</th>
+				<td><input id="longitude"  type="text" value="" placeholder="请输入经度" class="popinput quinputcol" required></td>
+				<th>纬度</th>
+				<td><input  id="latitude" type="text" value="" placeholder="请输入纬度" class="popinput quinputcol" required></td>
+			</tr>
+		</table>
+		<div class="tc pt25">
+			<button class="popbut" onclick="insert()">确定</button>
+
+<button class="popbut wBox_close" >退出</button></div>
+	</div>
+	<script type="text/javascript">
+
+function insert(){
+	var fan_code = $("#fan_code").val();
+	var fan_num = $("#fan_num").val();
+	var fan_model = $("#fan_model").val();
+	var blade_model = $("#blade_model").val();
+	var longitude = $("#longitude").val();
+	var latitude = $("#latitude").val();
+	$.ajax({              
+		type : "post",
+		url: "../service/insertFanInfo.htm",
+						data : "fan_code=" +fan_code+"&&fan_num=" + fan_num+ "&&fan_model=" + fan_model + "&&blade_model=" + blade_model + "&&longitude=" + longitude+ "&&latitude=" + latitude,
+						dataType : "json",
+						success : function(data) {
+							if (data.resultcode == "USR000") {
+								alert("添加成功！");
+								$("#wBox").hide();
+							}
+						}
+					});
+		}
+	</script>
+</body>
+</html>

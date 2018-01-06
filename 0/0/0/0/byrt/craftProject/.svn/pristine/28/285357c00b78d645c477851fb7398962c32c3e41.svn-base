@@ -1,0 +1,161 @@
+{
+	"result": {
+		"total" : 20,
+		"list" :[{
+			"worksPre": "2",
+			"worksNum" : "1",
+			"id": "1",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}, {
+			"worksPre": "3",
+			"worksNum" : "3",
+			"id": "3",
+			"groupId":"1",
+			"file1": "",
+			"worksName" : "123",
+			"compEntity" :{
+				"name":"刘海丽"
+			},
+			"voteNum" : "2",
+			"pvNum" : "32",
+			"worksCreateTime" : "2017-10-10",
+			"statusResp":"待审核"
+		}]
+	},
+	"code" : "0"
+}

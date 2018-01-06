@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.craft.dao.MatchMapper" >
+  <resultMap id="BaseResultMap" type="com.craft.pojo.Match" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="match_name" property="matchName" jdbcType="VARCHAR" />
+    <result column="match_intr" property="matchIntr" jdbcType="VARCHAR" />
+    <result column="org_id" property="orgId" jdbcType="INTEGER" />
+    <result column="time_ids" property="timeIds" jdbcType="INTEGER" />
+    <result column="award_ids" property="awardIds" jdbcType="INTEGER" />
+    <result column="judge_ids" property="judgeIds" jdbcType="INTEGER" />
+    <result column="req_ids" property="reqIds" jdbcType="INTEGER" />
+    <result column="classification_ids" property="classificationIds" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, match_name, match_intr, org_id, time_ids, award_ids, judge_ids, req_ids, classification_ids, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from match
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from match
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.craft.pojo.Match" >
+    insert into match (id, match_name, match_intr, 
+      org_id, time_ids, award_ids, 
+      judge_ids, req_ids, classification_ids, 
+      create_time, update_time)
+    values (#{id,jdbcType=INTEGER}, #{matchName,jdbcType=VARCHAR}, #{matchIntr,jdbcType=VARCHAR}, 
+      #{orgId,jdbcType=INTEGER}, #{timeIds,jdbcType=INTEGER}, #{awardIds,jdbcType=INTEGER}, 
+      #{judgeIds,jdbcType=INTEGER}, #{reqIds,jdbcType=INTEGER}, #{classificationIds,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.craft.pojo.Match" >
+    insert into match
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="matchName != null" >
+        match_name,
+      </if>
+      <if test="matchIntr != null" >
+        match_intr,
+      </if>
+      <if test="orgId != null" >
+        org_id,
+      </if>
+      <if test="timeIds != null" >
+        time_ids,
+      </if>
+      <if test="awardIds != null" >
+        award_ids,
+      </if>
+      <if test="judgeIds != null" >
+        judge_ids,
+      </if>
+      <if test="reqIds != null" >
+        req_ids,
+      </if>
+      <if test="classificationIds != null" >
+        classification_ids,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchName != null" >
+        #{matchName,jdbcType=VARCHAR},
+      </if>
+      <if test="matchIntr != null" >
+        #{matchIntr,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="timeIds != null" >
+        #{timeIds,jdbcType=INTEGER},
+      </if>
+      <if test="awardIds != null" >
+        #{awardIds,jdbcType=INTEGER},
+      </if>
+      <if test="judgeIds != null" >
+        #{judgeIds,jdbcType=INTEGER},
+      </if>
+      <if test="reqIds != null" >
+        #{reqIds,jdbcType=INTEGER},
+      </if>
+      <if test="classificationIds != null" >
+        #{classificationIds,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.craft.pojo.Match" >
+    update match
+    <set >
+      <if test="matchName != null" >
+        match_name = #{matchName,jdbcType=VARCHAR},
+      </if>
+      <if test="matchIntr != null" >
+        match_intr = #{matchIntr,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null" >
+        org_id = #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="timeIds != null" >
+        time_ids = #{timeIds,jdbcType=INTEGER},
+      </if>
+      <if test="awardIds != null" >
+        award_ids = #{awardIds,jdbcType=INTEGER},
+      </if>
+      <if test="judgeIds != null" >
+        judge_ids = #{judgeIds,jdbcType=INTEGER},
+      </if>
+      <if test="reqIds != null" >
+        req_ids = #{reqIds,jdbcType=INTEGER},
+      </if>
+      <if test="classificationIds != null" >
+        classification_ids = #{classificationIds,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.craft.pojo.Match" >
+    update match
+    set match_name = #{matchName,jdbcType=VARCHAR},
+      match_intr = #{matchIntr,jdbcType=VARCHAR},
+      org_id = #{orgId,jdbcType=INTEGER},
+      time_ids = #{timeIds,jdbcType=INTEGER},
+      award_ids = #{awardIds,jdbcType=INTEGER},
+      judge_ids = #{judgeIds,jdbcType=INTEGER},
+      req_ids = #{reqIds,jdbcType=INTEGER},
+      classification_ids = #{classificationIds,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+  
+  <select id="selectMatchNew" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from matchs
+    GROUP BY create_time DESC
+	limit 1
+  </select>
+  
+</mapper>

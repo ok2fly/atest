@@ -1,0 +1,4 @@
+/* CSS Document */
+@media only screen and (max-width:1140px){
+.letopnav a { width:15%; min-width:110px;}
+}

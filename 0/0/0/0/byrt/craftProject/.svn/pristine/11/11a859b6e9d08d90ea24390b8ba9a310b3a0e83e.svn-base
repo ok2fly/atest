@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.craft.dao.OpusMapper" >
+  <resultMap id="BaseResultMap" type="com.craft.pojo.Opus" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="opus_name" property="opusName" jdbcType="VARCHAR" />
+    <result column="opus_hot" property="opusHot" jdbcType="INTEGER" />
+    <result column="opus_type" property="opusType" jdbcType="INTEGER" />
+    <result column="group_id" property="groupId" jdbcType="INTEGER" />
+    <result column="creative_time" property="creativeTime" jdbcType="TIMESTAMP" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="material" property="material" jdbcType="VARCHAR" />
+    <result column="production_process" property="productionProcess" jdbcType="VARCHAR" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="img_ids" property="imgIds" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, opus_name, opus_hot, opus_type, group_id, creative_time, state, material, 
+    production_process, introduction, img_ids, img_thum_ids, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from opus
+    where id = #{ids,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from opus
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.craft.pojo.Opus" >
+    insert into opus (id, user_id, opus_name, 
+      opus_hot, opus_type, group_id, 
+      creative_time, state, material, 
+      production_process, introduction, img_ids, 
+       create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{opusName,jdbcType=VARCHAR}, 
+      #{opusHot,jdbcType=INTEGER}, #{opusType,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, 
+      #{creativeTime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, #{material,jdbcType=VARCHAR}, 
+      #{productionProcess,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{imgOrigIds,jdbcType=INTEGER}, 
+       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.craft.pojo.Opus" >
+    insert into opus
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="opusName != null" >
+        opus_name,
+      </if>
+      <if test="opusHot != null" >
+        opus_hot,
+      </if>
+      <if test="opusType != null" >
+        opus_type,
+      </if>
+      <if test="groupId != null" >
+        group_id,
+      </if>
+      <if test="creativeTime != null" >
+        creative_time,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="material != null" >
+        material,
+      </if>
+      <if test="productionProcess != null" >
+        production_process,
+      </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
+      <if test="imgIds != null" >
+        img_ids,
+      </if>
+
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="opusName != null" >
+        #{opusName,jdbcType=VARCHAR},
+      </if>
+      <if test="opusHot != null" >
+        #{opusHot,jdbcType=INTEGER},
+      </if>
+      <if test="opusType != null" >
+        #{opusType,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null" >
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="creativeTime != null" >
+        #{creativeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="material != null" >
+        #{material,jdbcType=VARCHAR},
+      </if>
+      <if test="productionProcess != null" >
+        #{productionProcess,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="imgIds != null" >
+        #{imgIds,jdbcType=INTEGER},
+      </if>
+
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.craft.pojo.Opus" >
+    update opus
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="opusName != null" >
+        opus_name = #{opusName,jdbcType=VARCHAR},
+      </if>
+      <if test="opusHot != null" >
+        opus_hot = #{opusHot,jdbcType=INTEGER},
+      </if>
+      <if test="opusType != null" >
+        opus_type = #{opusType,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="creativeTime != null" >
+        creative_time = #{creativeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="material != null" >
+        material = #{material,jdbcType=VARCHAR},
+      </if>
+      <if test="productionProcess != null" >
+        production_process = #{productionProcess,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="imgIds != null" >
+        img_ids = #{imgIds,jdbcType=INTEGER},
+      </if>
+
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.craft.pojo.Opus" >
+    update opus
+    set user_id = #{userId,jdbcType=INTEGER},
+      opus_name = #{opusName,jdbcType=VARCHAR},
+      opus_hot = #{opusHot,jdbcType=INTEGER},
+      opus_type = #{opusType,jdbcType=INTEGER},
+      group_id = #{groupId,jdbcType=INTEGER},
+      creative_time = #{creativeTime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=INTEGER},
+      material = #{material,jdbcType=VARCHAR},
+      production_process = #{productionProcess,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      img_ids = #{imgIds,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+  
+  <select id="selOpus" resultType="Opus" parameterType="java.lang.Integer" >
+   select 
+	   u.use_nam "user.use_nam",
+	   o.opus_name,
+	   o.opus_hot,
+	   o.img_ids
+	from opus o,
+		classification c,
+		user u
+	where o.user_id = u.id
+		and o.group_id = c.id
+		and o.state = 2
+    	and c.id = #{id,jdbcType=INTEGER}
+ 
+  </select>
+  
+  
+  
+  
+  <select id="selOpusByNewHotAge" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap" >
+   select 
+	   us.use_nam,
+	   opu.id,
+	   opu.user_id,
+	   opu.opus_name,
+	   opu.opus_hot,
+	   opu.img_ids
+	from opus opu,
+		classification cla,
+		user us
+	where opu.user_id = us.id
+		and opu.group_id = cla.id
+		and opu.state = 2
+		
+		<if test="regId != null and regId != ''">
+    		and us.reg_id = #{regId}
+    	</if>
+    	
+    	<if test="regFatId != null and regFatId != ''">
+    		and us.reg_fat_id = #{regFatId}
+    	</if>
+		
+		<if test="id != null and id != ''">
+    		and cla.id = #{id}
+    	</if>
+    	
+    	<if test="staAge != null and staAge != '' ">
+			and us.age 	&gt;= #{staAge}
+		</if>
+    	
+    	<if test="endAge != null and endAge != '' ">
+			and us.age &lt;= #{endAge}
+		</if>
+    	
+    	<if test="creativeTime != null and opusHot == null">
+    	
+			order BY opu.create_time desc
+		</if>
+		
+    	<if test="opusHot != null and creativeTime == null">
+    	
+			order BY opu.opus_hot desc
+		</if>
+		
+    	<if test="opusHot != null and creativeTime != null">
+    	
+			order BY opu.opus_hot desc ,opu.create_time desc
+		</if>
+		limit #{start},#{evertPage}
+  </select>
+  
+  <select id="selOpusByNewHotAgeCount" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap" >
+   select 
+	   count(opu.id) count
+	from opus opu,
+		classification cla,
+		user us
+	where opu.user_id = us.id
+		and opu.group_id = cla.id
+		and opu.state = 2
+		
+		<if test="regId != null and regId != ''">
+    		and us.reg_id = #{regId}
+    	</if>
+    	
+    	<if test="regFatId != null and regFatId != ''">
+    		and us.reg_fat_id = #{regFatId}
+    	</if>
+		
+		<if test="id != null and id != ''">
+    		and cla.id = #{id}
+    	</if>
+    	
+    	<if test="staAge != null and staAge != '' ">
+			and us.age 	&gt;= #{staAge}
+		</if>
+    	
+    	<if test="endAge != null and endAge != '' ">
+			and us.age &lt;= #{endAge}
+		</if>
+    	
+    	<if test="creativeTime != null and opusHot == null">
+    	
+			order BY opu.create_time desc
+		</if>
+		
+    	<if test="opusHot != null and creativeTime == null">
+    	
+			order BY opu.opus_hot desc
+		</if>
+		
+    	<if test="opusHot != null and creativeTime != null">
+    	
+			order BY opu.opus_hot desc ,opu.create_time desc
+		</if>
+		
+  </select>
+  
+  
+  <select id="selOpusByOpusId" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap" >
+		   
+			SELECT
+				op.id,
+				op.opus_name,
+				op.user_id,
+				us.use_nam,
+				op.introduction,
+				op.opus_hot,
+				op.group_id,
+				op.creative_time,
+				op.state,
+				op.img_ids,
+				cio.name
+			FROM
+				opus op,
+				user us,
+				classification cio
+			WHERE
+				op.user_id = us.id
+			AND op.group_id = cio.id
+			AND op.id = #{id}
+		
+		
+  </select>
+  
+  
+   <select id="selBasReg" resultType="java.util.LinkedHashMap">
+		   
+			SELECT
+				*
+			FROM
+				bas_reg br
+			WHERE
+				br.reg_lev = 1
+			AND br.reg_fat_id = 0
+		
+		
+  </select>
+  
+  
+  <select id="selBasRegCity" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+		   
+		SELECT
+			*
+		FROM
+			bas_reg br
+		WHERE
+			br.reg_lev = 2
+		AND br.reg_fat_id = #{id}
+		
+  </select>
+  
+  
+  <select id="selBasRegArea" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+		   
+		SELECT
+			*
+		FROM
+			bas_reg br
+		WHERE
+			br.reg_lev = 3
+		AND br.reg_fat_id = #{id}
+		
+  </select>
+  
+  <select id="selAgeByCityArea" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+		   
+		SELECT
+			u.age
+		FROM
+			user u
+		WHERE
+			u.reg_id = #{regId}
+		AND u.reg_fat_id = #{regFatId}
+				
+  </select>
+  
+   <insert id="vote" parameterType="java.util.LinkedHashMap">
+
+		INSERT INTO competition_info
+			(ip,opus_id)
+		VALUE
+			(#{ip}, #{opusId});
+	</insert>
+  
+  
+   <select id="selVoteByIpAndOpusId" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		SELECT
+			*
+		FROM
+			competition_info cin
+		WHERE
+			cin.ip = #{ip}
+		AND cin.opus_id = #{opusId}
+		AND to_days(cin.create_time) = to_days(now());
+				
+  </select>
+  
+  
+  <update id="updOpusHot" parameterType="java.util.LinkedHashMap">
+				
+		update opus set opus_hot = #{opusHot} where opus.id = #{opusId}
+
+  </update>
+  
+  <select id="selOpusHotByOpusId" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select * from opus where id = #{opusId} and state = 2
+		
+  </select>
+  
+  
+   <select id="selVoteByOpusId" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		SELECT
+			count(cin.opus_id) vote
+		FROM
+			competition_info cin
+		WHERE
+			cin.opus_id = #{opusId}
+
+  </select>
+  
+  
+   <select id="selUserByUserId" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+			SELECT
+			uci.*,
+		(select br.reg_nam from bas_reg br where br.id = uci.pro_id) reg_name,
+		(select br.reg_nam from bas_reg br where br.id = uci.city_id) are_name
+		FROM
+			user us,user_competition_info uci
+		WHERE us.id = uci.use_id
+			and us.id = #{id}
+
+  </select>
+  
+  <select id="selOpusByUserId" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select op.*,clas.name,
+		(select cla.name from classification cla where clas.parent_id = cla.id) parent
+		from 
+		opus op,classification clas 
+		where op.group_id = clas.id AND
+		op.user_id = #{id} 
+
+  </select>
+  
+  
+  
+ 
+  <!-- *******************测试********************** -->
+  
+  <insert id="addStu" parameterType="java.util.LinkedHashMap">
+  
+  insert into stu (user_name,password,email,code,stat)
+  values(#{name},#{password},#{email},#{code},#{stat});  
+  </insert>
+  
+   <select id="selStuById" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select * from stu where id =#{id}
+
+  </select>
+  
+  <update id="updStu" parameterType="java.util.LinkedHashMap">
+  
+  update stu set code=#{code} where id = #{id}
+  
+  </update>
+   
+     <!-- *******************测试********************** -->
+    
+    
+    
+    
+   <insert id="addUser" parameterType="java.util.LinkedHashMap">
+  
+  insert into user (use_nam,use_pas,use_mob)
+  values(#{name},#{password},#{mob});  
+  </insert>
+   
+  
+   <select id="selUserByMob" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select * from user where use_mob = #{mob}
+
+  </select>
+  
+  
+  <select id="selOpusByLike" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select 
+			(select cl.parent_id from classification cl  where cl.id = opu.group_id) parent_id,
+			cla.id cla_id,
+			cla.name,
+			opu.*
+		FROM
+			user_competition_info uci,
+			user us,
+			opus opu,
+			classification cla
+		WHERE
+			uci.use_id = us.id
+		AND opu.user_id = us.id
+		AND opu.group_id = cla.id	
+		and opu.state=2
+		
+		<if test="parent_id != null and parent_id != '' ">
+			and parent_id = #{parent_id}
+		</if>
+		
+		<if test="search!=null">
+ 		 	  and (uci.use_nam like '%${search}%' 
+ 		 	  or opu.opus_name like '%${search}%'  		  
+ 		 	  or opu.id like '%${search}')
+		</if>
+
+
+
+  </select>
+  
+  
+  <select id="selAllOpus" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select o.*,cla.name,us.use_nam
+		from opus o,
+		user us,
+		classification cla
+		where o.user_id = us.id 
+		and o.group_id = cla.id
+		
+		
+		<if test="userName != null and userName != '' ">
+			and us.use_nam like '%${search}%'
+		</if>
+		
+		<if test="opusName != null and opusName != '' ">
+			and o.opus_name like '%${opusName}%'
+		</if>
+		
+		<if test="state != null and state != '' ">
+			and o.state = #{state}
+		</if>
+		
+		
+		<if test="groupId != null and groupId != '' ">
+			and o.group_id = #{groupId}
+		</if>
+		
+		<if test="sta_time != null and sta_time != ''">
+			<![CDATA[ AND o.create_time >= #{sta_time} ]]>
+		</if>
+		
+		<if test="end_time != null and end_time != ''">
+			<![CDATA[ o.create_time <= #{end_time} ]]>
+		</if>
+ 	limit #{start},#{evertPage}
+  </select>
+  
+  
+  <select id="selAllOpusCount" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select count(o.id) count
+		from opus o,
+		user us,
+		classification cla
+		where o.user_id = us.id 
+		and o.group_id = cla.id
+		
+		
+		<if test="userName != null and userName != '' ">
+			and us.use_nam like '%${search}%'
+		</if>
+		
+		<if test="opusName != null and opusName != '' ">
+			and o.opus_name like '%${opusName}%'
+		</if>
+		
+		<if test="state != null and state != '' ">
+			and o.state = #{state}
+		</if>
+		
+		<if test="groupId != null and groupId != '' ">
+			and o.group_id = #{groupId}
+		</if>
+		
+		<if test="sta_time != null and sta_time != ''">
+			<![CDATA[ AND o.create_time >= #{sta_time} ]]>
+		</if>
+		
+		<if test="end_time != null and end_time != ''">
+			<![CDATA[ o.create_time <= #{end_time} ]]>
+		</if>
+  </select>
+  
+  
+  
+  
+  
+  <select id="updOpusStateTwo" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		update opus set state = #{state} where id = #{id}
+
+  </select>
+  
+  
+  <select id="updOpusStateThree" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		update opus set state = #{state} where id = #{id}
+
+  </select>
+  
+  
+  <!-- ****************use_use 表的操作******************************************************************** -->
+  
+   <insert id="insertUse" parameterType="java.util.LinkedHashMap">
+
+		INSERT INTO use_use (
+						acc_num,
+						use_mal,
+						use_nam,
+						use_sex,
+						use_mob,
+						use_idc,
+						use_add,
+						use_maj,
+						pla_ori,
+						use_pas,
+						remark,
+						crt_tim
+					)
+					VALUES
+						(
+							#{acc_num},
+							#{use_mal},
+							#{use_nam},
+							#{use_sex},
+							#{use_mob},
+							#{use_idc},
+							#{use_add},
+							#{use_maj},
+							#{pla_ori},
+							#{use_pas},
+							#{remark},
+							#{crt_tim}
+						)
+	</insert>
+  
+  <select id="selectUserById" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select * from use_use where id = #{id} 
+
+  </select>
+  
+   <update id="updateUser" parameterType="java.util.LinkedHashMap">
+
+		update use_use set 
+			acc_num= #{acc_num},
+			use_mal= #{use_mal},
+			use_nam = #{use_nam},
+			use_sex = #{use_sex},
+			use_mob = #{use_mob},
+			use_idc = #{use_idc},
+			use_add = #{use_add},
+			use_maj = #{use_maj},
+			pla_ori = #{pla_ori},			
+			remark = #{remark},
+			mod_tim = #{mod_tim}
+		where id = #{id}
+
+  </update>
+  
+  
+  
+  <update id="delUser" parameterType="java.util.LinkedHashMap">
+				
+		update use_use set del_flag = 1 where id = #{id}
+
+  </update>
+  
+  
+  <select id="selAllUserByNameAndMob" resultType="java.util.LinkedHashMap" parameterType="java.util.LinkedHashMap">
+				
+		select * from use_use
+		where del_flag = 0
+		<if test="userName != null and userName != '' ">
+			and use_num like '%${userName}%'
+		</if>
+		
+		<if test="userMob != null and userMob != '' ">
+			and use_mob like '%${userMob}%'
+		</if>
+		
+  </select>
+  
+  
+  <!-- ************************************************************************************ -->
+
+    <select id="upOpusHot"  parameterType="map">
+        update opus set opus_hot = #{count} where id = #{id}
+
+    </select>
+
+
+  
+  
+</mapper>

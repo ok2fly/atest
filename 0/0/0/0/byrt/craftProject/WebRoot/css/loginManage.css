@@ -1,0 +1,122 @@
+/* CSS Document */
+body {
+	height: 100%;
+	width: 100%;
+	background: url(../images/login.jpg) no-repeat center top;
+	background-size:100% 100%;  
+	position: relative;
+	min-height: 600px;
+}
+@media screen and  (min-width: 1900px)  {
+   body{
+		min-height: 949px;
+	}	
+}
+@media screen and  (max-width: 1620px)  {
+   body{
+		min-height: 809px;
+	}	
+}
+@media screen and  (max-width: 1368px) {
+   body{
+		min-height: 677px;
+	}
+}
+.loginlogo {
+	position: absolute;
+	left: 10px;
+	top: 10px;	
+}
+.login {
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	margin: 0 0 0 0;
+}
+@media screen and (min-width: 1900px) { 
+.login {
+	left: 40%;
+	top: 40%;
+}
+} 
+@media screen and (max-width: 1368px) { 
+.login {
+	left: 38%;
+	top: 28%;
+}
+} 
+.loginpop {
+	width: 350px;
+	height: 350px;
+	/* filter: Alpha(opacity=80);
+	opacity: 0.3; */
+	background: #f1f1f1;
+}
+.loginmin {
+	width: 300px;
+	height: 330px;
+	position: absolute;
+	padding: 0 15px;
+	left: 10px;
+	top: 10px;
+	background: #fff;
+	z-index: 10;
+}
+.loginmin h2 {
+	padding-top: 12px;
+	height: 44px;
+	line-height: 44px;
+	color: #333;
+	font-size: 24px;
+	text-align: center;
+	font-weight: normal;
+}
+.logintext {
+	height: 20px;
+	padding: 15px 0;
+	border: solid 1px #d6d6d6;
+	width: 298px;
+	margin: 18px 0 12px;
+	float: left
+}
+.logintext i {
+	width: 29px;
+	height: 20px;
+	display: inline-block;
+	border-right: solid 1px #d5d5d5;
+	margin-left: 17px;
+	float: left;
+	background: url(../images/icon-all.png) no-repeat -47px -157px;
+}
+.logintext i.active {
+	background-position: -47px -180px;
+}
+.logintext input {
+	width: 244px;
+	margin-left: 6px;
+	float: left;
+	display: inline;
+	border: none;
+	background: none;
+}
+.bore3 {
+	border: solid 1px #e3e3e3;
+	background: #e3e3e3;
+}
+.loginbut {
+	height: 52px;
+	line-height: 52px;
+	background: #ed1b24;
+	width: 300px;
+	color: #fff;
+	border: none;
+	margin-top: 18px;
+	float: left;
+	cursor: pointer;
+}
+
+.loginimg{
+	position: relative;
+}

@@ -1,0 +1,8 @@
+.DETAIL .bds_tsina     	   {background-position: -30px -280px;}
+.DETAIL .bds_douban    	   {background-position: -50px -280px;}
+.DETAIL .bds_weixin    	   {background-position: -70px -280px;}
+.DETAIL .bds_qzone     	   {background-position: -90px -280px;}
+.DETAIL .bds_renren    	   {background-position: -110px -280px;}
+.DETAIL {zoom: 1;font-size: 0;position: absolute;left:60px;top:8px;}
+.DETAIL:after {content: ".";visibility: hidden;display: block;height: 0;clear: both;}
+.DETAIL a{display:inline-block; *zoom:1;*display:inline;background: url(../images/icon.png) no-repeat;cursor: pointer;width: 20px;height: 20px;transition: none;}

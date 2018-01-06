@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>导入场站</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/pop.css">
+<script src="../js/jquery.js"></script>
+<script src="../js/leftnav.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/wbox.js"></script>
+</head>
+<body>
+<div class="pt18">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="poptable">
+<tr>
+<th>编号</th>
+<td>
+<input id="station_code" type="text" value="" placeholder="请输入编号" class="popinput quinputcol"></td>
+<th>场站名称</th>
+<td><input id="station_name" type="text" value="" placeholder="请输入场站名称" class="popinput quinputcol"></td>
+</tr>
+<tr>
+<th>装机容量</th>
+<td><input id="capacity" type="text" value="" placeholder="请输入装机容量" class="popinput quinputcol"></td>
+<th>风机台数</th>
+<td><input id="fan_number" type="text" value="" placeholder="请输入风机台数" class="popinput quinputcol"></td>
+</tr>
+<tr>
+<th>经度</th>
+<td><input id="longitude" type="text" value="" placeholder="请输入经度" class="popinput quinputcol"></td>
+<th>纬度</th>
+<td><input id="latitude" type="text" value="" placeholder="请输入经度" class="popinput quinputcol"></td>
+</tr>
+</table>
+<div class="tc pt25"><button class="popbut" onclick="update()">确定</button>
+<button class="popbut wBox_close" >退出</button></div>
+</div>
+<script type="text/javascript">
+
+function update(){
+	var station_code = $("#station_code").val();
+	var station_name = $("#station_name").val();
+	var capacity = $("#capacity").val();
+	var fan_number = $("#fan_number").val();
+	var longitude = $("#longitude").val();
+	var latitude = $("#latitude").val();
+	$.ajax({                
+		type : "post",
+		url: "../service/insertStationInfo.htm",
+		data: "station_code="+station_code+"&&station_name="+station_name+"&&capacity="+capacity+"&&fan_number="+fan_number+"&&longitude="+longitude+"&&latitude="+latitude,
+		dataType : "json",
+		success: function(data){
+		 if(data.resultcode=="USR000"){
+			 alert("添加成功！");
+			 wbox.style.display = "none";
+		 }
+		}
+	});
+}
+
+</script>
+</body>
+</html>

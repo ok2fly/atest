@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/spring_jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/poi-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/poi-examples-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/poi-excelant-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/poi-ooxml-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/poi-ooxml-schemas-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/poi-scratchpad-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-jexl-1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jsf-api.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jsf-impl.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jxls-core-0.9.8.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jxls-reader-0.9.8.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

@@ -1,0 +1,22 @@
+*{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size: 12px;font-weight: 500}
+body{background: #f4f4f2;color:#666;font:12px/1.8 "Microsoft YaHei","SimSun"}
+.wid990 img{display: block;border:none}
+a{color:#666;text-decoration: none}
+a:hover{color:#2C9F9F;text-decoration: none}
+.main_color{color:#2C9F9F;}
+.clear{clear:both;}
+.h{height:20px;clear: both}
+.h2{height:40px;clear:both;}
+.h_5{height:10px;clear:both;}
+.fl{float: left;}
+.fr{float: right;}
+.border{border:1px solid #c9c9c9;}
+.bgbai{background: #fff}
+.bbox{width:110%}
+.yuanjiao{position: relative;min-width:16px;min-height:16px;border:1px solid #dcdcdc;background: #fff}
+.yuanjiao div .tl,.yuanjiao div .tr,.yuanjiao div .bl,.yuanjiao div .br{position: absolute;width: 8px;height: 8px;background-image: url(../images/yuanjiao.png);background-repeat: no-repeat;}
+.yuanjiao div .tl,.yuanjiao div .tr{top:-1px;background-position-Y:0 }
+.yuanjiao div .bl,.yuanjiao div .br{bottom:-1px;background-position-Y:-8px }
+.yuanjiao div .tl,.yuanjiao div .bl{left:-1px;background-position-x:0 }
+.yuanjiao div .tr,.yuanjiao div .br{right:-1px;background-position-x:-8px }

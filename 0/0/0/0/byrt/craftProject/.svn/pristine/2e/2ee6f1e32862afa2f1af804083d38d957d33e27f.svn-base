@@ -1,0 +1,604 @@
+
+/* CSS Document */
+.header {
+	width:100%;
+	min-width:1299px;
+	height: 80px;
+	background: #ed1c24;
+	position: relative;
+}
+.logo {
+	display: inline-block;
+	height: 56px;
+	position: absolute;
+	top: 14px;
+	left: 38px;
+}
+.topnav {
+	height: 80px;
+	padding-left: 100px;
+	text-align: center;
+}
+.topnav a {
+	width: 120px;
+	height: 36px;
+	padding-top: 44px;
+	line-height: 36px;
+	color: #fff;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	position: relative;
+	box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+}
+.topnav a:hover, .topnav a.active {
+	background: #d1101a;
+	text-decoration:none;
+	color:#fff;
+}
+.topnav a:hover, .topnav a.active {
+	background: #d1101a;
+	text-decoration:none;
+	color:#fff;
+}
+ 
+.letopnav lable {
+	display:none;
+	float: left;
+	nargin-left:3px;
+}
+ 
+
+.topnav a i {
+	width: 32px;
+	height: 38px;
+	display: inline-block;
+	background: url(../images/icon-all.png) no-repeat;
+	position: absolute;
+	top: 10px;
+	left: 44px;
+}
+.topnav a i.bg1 {
+	background-position: -108px -26px;
+}
+.topnav a i.bg2 {
+	background-position: -108px -64px;
+}
+.topnav a i.bg3 {
+	background: url(../images/sbgl.png) no-repeat;
+	/* background-position: -108px -102px; */
+	background-position: 0px 2px;
+}
+.topnav a i.bg4 {
+	background: url(../images/tjfx.png) no-repeat;
+	/* background-position: -108px -140px; */
+	background-position: 0px 2px;
+}
+.topnav a i.bg5 {
+	background-position: -40px -117px;
+}
+.topnav a i.bg6 {
+	background: url(../images/help.png) no-repeat;
+	background-position: 0px 2px;
+	/* background-position: -40px -117px; */
+}
+.topnav a i.bg7 {
+	background: url(../images/version.png) no-repeat;
+	background-position: 0px 2px;
+	/* background-position: -40px -117px; */
+}
+.headrigh {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 80px;
+	line-height: 80px;
+	color: #fff;
+}
+.headrigh a {
+	display: inline-block;
+	width: 79px;
+	padding-left: 20px;
+	height: 80px;
+	line-height: 80px;
+	border-left: solid 1px #d1101a;
+	color: #fff;
+	position: relative;
+	text-align: center;
+	margin-left: 20px;
+}
+.headrigh a i {
+	width: 18px;
+	height: 20px;
+	display: inline-block;
+	position: absolute;
+	top: 31px;
+	left: 23px;
+	background: url(../images/icon-all.png) no-repeat -75px -90px;
+}
+/******-------
+		./ header top nav
+---------*********/
+/******--------------
+		left nav 
+-----------****/
+.main {
+	width: 100%;
+	position: relative;
+	min-height: 100%;
+}
+.leftnav {
+	width: 320px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-box-shadow: 4px 4px 4px #b6b6b6;
+	-moz-box-shadow: 4px 4px 4px #b6b6b6;
+	box-shadow: 4px 4px 4px #b6b6b6;
+	background: #fff;
+	min-height: 500px;
+	z-index:100;
+}
+.letopnav {
+	height: 50px;
+	width: 100%;	
+	display: block;
+	position: relative;
+}
+.letopnav01 {
+	min-width:800px;
+}
+.letopnav span, .letopnav a {
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	background: #fff;
+	width: 158px;
+	border: solid 1px #d6d6d6;
+	color: #333;
+	cursor: pointer;
+	float: left;
+	display: inline-block;
+}
+.letopnav span.active, .letopnav a.active {
+	background: #ed1c24;
+	border-color: #ed1c24;
+	color: #fff;
+}
+
+/******-------- 
+	条件 搜索
+-------****/
+.leftcond {
+	padding: 0 15px;
+}
+.condition {
+	padding: 8px 10px;
+	height: 22px;
+	border: solid 1px #d6d6dd;
+	margin: 21px 0 8px;
+}
+.condition input {
+	height: 20px;
+	line-height: 20px;
+	border: solid 1px #fff;
+	width: 240px;
+	background: noen;
+	color: #999;
+	float: left;
+}
+.condition button {
+	width: 22px;
+	height: 22px;
+	background: url(../images/icon-all.png) no-repeat 0 0;
+	display: inline-block;
+	border: none;
+	float: right;
+}
+.condsel li {
+	width: 100%;
+	display: block;
+	height: 40px;
+	margin-top: 11px;
+}
+.condsel li span {
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	display: inline-block;
+	width: 80px;
+	color: #666; 
+}
+.condsel li select {
+	border: solid 1px #d6d6d6;
+	height: 43px;
+	line-height: 43px;
+	width: 208px;
+	float: right;
+*margin-top:11px;
+}
+/******-------- 
+	./  条件 搜索
+-------****/
+/******-------- 
+	搜索内容展示
+-------****/
+.pg5 {
+	padding: 0 5px;
+}
+.regname { 
+	height: 46px;
+	line-height: 46px;
+	font-size: 16px;
+	text-indent: 11px;
+	color: #333; 
+	font-weight: normal;
+	width: 120px;  
+	display: block;
+}
+.regname2 { 
+	height: 46px;
+	line-height: 46px;
+	font-size: 16px;
+	text-indent: 11px;
+	color: #333; 
+	font-weight: normal;
+	display: block;
+	text-align: center;
+}
+.statname {
+	height: 50px;
+	line-height: 50px;
+	background: #f2f2f2;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+.statcol{
+	background:  #ed1c24;
+	color : #fff;
+}
+
+.statname span{
+width: 20px;
+height: 20px;
+position: relative;
+}
+.statname span i{
+	height: 18px;
+	width: 20px;
+	cursor: pointer;	
+	position: absolute;
+	background: url(../images/icon-all.png) no-repeat -101px 2px;
+	top:16px;
+	display: none;
+	left: 5px;
+}
+.statname:hover.statname span i{
+	display: inline-block;
+}
+.statname a {
+	position: relative;
+	height: 50px;
+	display: inline-block;
+	padding-left: 41px;
+	color: #333;
+	float: left;
+}
+.statname a i {
+	width: 23px;
+	height: 23px;
+	display: inline-block;
+	background: url(../images/cdz.png) no-repeat ;
+	position: absolute;
+	left: 12px;
+	top: 14px;
+}
+
+.statname a i.zq{
+	background: url(../images/cdz_zq.png) no-repeat ;
+}
+
+.statname em {
+	width: 21px;
+	height: 11px;
+	background: url(../images/icon-all.png) no-repeat -50px 0px;
+	float: right;
+	margin: 19px 16px 0 0;
+	display: inline-block;
+	cursor: pointer;
+}
+.statname em.active {
+	background-position: -75px 0;
+}
+
+.statname span.active{
+	float:left;
+}
+/******-------- 
+	./ 搜索内容展示
+-------****/
+/*********-------- 
+	场站 设备 列表  选择关注取关
+----******/
+.statlist {
+	padding: 0 1px;
+}
+.statlist li {
+	width: 60px;
+	height: 20px;
+	padding: 10px 6px;
+	line-height: 20px;
+	margin-bottom: 5px;
+	float: left;
+	text-align: center;
+	/* margin-left: 5px; */
+	display: inline;
+}
+.statlist li span {
+	width: 20px;
+	height: 20px;
+	float: left;
+}
+.statlist li span i {
+	height: 18px;
+	width: 20px;
+	cursor: pointer;
+	display: none;
+	background: url(../images/icon-all.png) no-repeat;
+}
+.statlist li:hover span i {
+	display: inline-block;
+	background-position: -101px 2px;
+}
+.statlist li.active span i,.statlist li span.active i,.statname span.active i {
+	display: block !important;
+	background-position: -125px 2px;
+}
+.statlist li a {
+	color: #666;
+	width: 30px;
+	padding: 0 5px;
+	text-align: center;
+	display: inline-block;
+	float: left;
+	font-size: 16px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.statlist li:hover {
+	background: #e9e9e9;
+}
+
+.bge9{
+	background: #e9e9e9;
+}
+.bgf0{
+	color: #ff0000 !important;
+}
+/*******----
+	./ 场站 设备 列表 
+-----------************/
+/*****-------------
+	特别关注
+--------***/
+.statlist-dl dt, .statlist-dl dd {
+	height: 20px;
+	line-height: 20px;
+	padding: 10px 0;
+	display: block;
+	float: left;
+	width: 100%;
+	font-weight: normal;
+	text-align: center;
+}
+.statlist-dl dd {
+	border-top: solid 1px #d6d6d6;
+}
+.statlist-dl span,.statlist-dl span.sp1 a {
+	display: inline-block;
+	<!--float: left;-->
+	height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	word-break: break-all;
+	text-overflow: ellipsis;
+}
+.statlist-dl span.sp1 a {
+	width: 100px;
+	color:#666;
+}
+.statlist-dl span.sp1 {
+	width: 50%;
+}
+.statlist-dl span.sp2 {
+	width: 184px;
+}
+.statlist-dl span.sp3 {
+	width: 50%;
+}
+.statlist-dl span.sp3 a {
+	color: #666;
+}
+.statlist-dl span em {
+	display: inline-block;
+	height: 20px;
+	min-width: 30px;
+	padding-left: 22px;
+	text-align: left;
+	line-height: 20px;
+	position: relative;
+}
+.statlist-dl span em i {
+	position: absolute;
+	height: 10px;
+	width: 10px;
+	line-height: 10px;
+	top: 5px;
+	left: 5px;
+	font-size: 0;
+	display: inline-block;
+}
+.statlist-dl span em i.bg-red {
+	background: #c00;
+}
+.statlist-dl span em i.bg-yell {
+	background: #FFF833;
+}
+.statlist-dl span em i.bg-gre {
+	background: #093;
+}
+/*****-------------
+	./ 特别关注
+----------*************/
+
+/************--
+		收起导航效果
+----------****/
+.minleftnav {
+	display: none;
+}
+.minleftnav span {
+	width: 80px;
+	line-height: 80px;
+	margin: 1px 0;
+	cursor: pointer;
+	background: #f2f2f2;
+	display: inline-block;
+	text-align: center;
+}
+.minleftnav span.active {
+	background: #ed1c24;
+	color: #fff;
+}
+/************--
+		./ 收起导航效果
+----------****/
+/********--------
+	right main 
+-----------	******/
+.righmain {
+/*	overflow: hidden; */
+	width: auto;
+	min-width: 1000px;
+}
+.viewFramework {
+	transition: all 0.2s ease 0s;
+	width: 100%;
+}
+/********--------
+	right main 
+-----------	******/
+/*****------
+	right map fan
+-----****/
+.righfannav {
+	width: 400px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	-webkit-box-shadow: -4px 4px 4px #b6b6b6;
+	-moz-box-shadow: -4px 4px 4px #b6b6b6;
+	box-shadow: -4px 4px 4px #b6b6b6;
+	background: #fff;
+	min-height: 500px;
+	z-index: 100;
+	margin-bottom: 10px;
+}
+.righfannav .statname span {
+	padding-left: 14px;
+}
+.h160 {
+	height: 160px;
+	margin-bottom: 5px;
+}
+.h160 img {
+	width: 100%;
+}
+.lh30 {
+	height: 30px;
+	line-height: 30px;
+}
+.lh30 a {
+	text-decoration: underline;
+	color: #666;
+}
+.w0 { width:0px;}
+.w0 .pg5 { display:none;}
+/*****------
+	./ right map fan
+-----------------****/
+/*****-----
+	展开收起 but
+--------***/
+.openbut {
+	width: 20px;
+	height: 91px;
+	display: inline-block;
+	background: url(../images/icon-all.png) no-repeat;
+	position: absolute;
+	top: 50%;
+	margin-top: -45px;
+	z-index: 100;
+	cursor: pointer;
+}
+.lf-sh { background-position:0 -202px; left: 320px;}
+.rg-sh { background-position:-20px -202px; right: 400px;}
+.rg-zk { background-position:-60px -202px; right: 0;}
+
+
+
+
+/*****-----
+	./ 展开收起 but
+--------***/
+
+/******------
+	展开收起 控制
+----********/
+.max-leftnav .left-nav, .max-leftnav .lf-sh {
+	display: block;
+}
+.min-leftnav .left-nav, .min-leftnav .lf-sh {
+	display: none;
+}
+.min-leftnav .leftnav {
+	width: 80px;
+}
+.min-leftnav .minleftnav {
+	display: block;
+}
+.max-leftnav .righmain {
+	padding-left: 10px;
+	transition: padding-left 1s;
+	-moz-transition: padding-left 1s; /* Firefox 4 */
+	-webkit-transition: padding-left 1s; /* Safari and Chrome */
+}
+.min-leftnav .righmain {
+	padding-left: -100px;
+}
+/******------
+	展开收起 控制
+----********/
+
+
+
+/******--------------
+		./  left nav 
+----------------------****/
+
+
+/******--------------
+		电桩列表
+----------------------****/
+.statprompt .red a {
+    text-align: center;
+    display: inline-block;
+}
+/******--------------
+		./  电桩列表 
+----------------------****/
+

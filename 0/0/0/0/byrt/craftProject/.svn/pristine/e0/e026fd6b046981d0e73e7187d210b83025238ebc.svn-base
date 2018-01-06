@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.craft.dao.BasPicMapper">
+    <resultMap id="BaseResultMap" type="com.craft.pojo.BasPic">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="pic_nam" property="picNam" jdbcType="VARCHAR"/>
+        <result column="pic_thum" property="picThum" jdbcType="VARCHAR"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,pic_nam,pic_thum,pic_url,remark,create_time,update_time
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from bas_pic
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM bas_pic
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.craft.pojo.BasPic">
+        INSERT INTO bas_pic (id, pic_nam, pic_thum,
+                             pic_url, remark, create_time,
+                             update_time)
+        VALUES (#{id,jdbcType=INTEGER}, #{picNam,jdbcType=VARCHAR}, #{picThum,jdbcType=VARCHAR},
+                #{picUrl,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.craft.pojo.BasPic" useGeneratedKeys="true" keyProperty="id">
+        <!-- 添加送达大信息的同时获取自动生成的ID的值 -->
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+          SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+
+        insert into bas_pic
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="picNam != null">
+                pic_nam,
+            </if>
+            <if test="picThum != null">
+                pic_thum,
+            </if>
+            <if test="picUrl != null">
+                pic_url,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="picNam != null">
+                #{picNam,jdbcType=VARCHAR},
+            </if>
+            <if test="picThum != null">
+                #{picThum,jdbcType=INTEGER},
+            </if>
+            <if test="picUrl != null">
+                #{picUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.craft.pojo.BasPic">
+        update bas_pic
+        <set>
+            <if test="picNam != null">
+                pic_nam = #{picNam,jdbcType=VARCHAR},
+            </if>
+            <if test="picThum != null">
+                pic_thum = #{picThum,jdbcType=VARCHAR},
+            </if>
+            <if test="picUrl != null">
+                pic_url = #{picUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.craft.pojo.BasPic">
+        UPDATE bas_pic
+        SET pic_nam     = #{picNam,jdbcType=VARCHAR},
+            pic_thum     = #{picThum,jdbcType=VARCHAR},
+            pic_url     = #{picUrl,jdbcType=VARCHAR},
+            remark      = #{remark,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>
